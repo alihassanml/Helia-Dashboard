@@ -1,12 +1,52 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Users, Wrench, BarChart, Clock, Shield, Star, ArrowRight, CheckCircle, TrendingUp, Zap, Award } from 'lucide-react';
+import { Users, Wrench, BarChart, Clock, Shield, Star, ArrowRight, CheckCircle, TrendingUp, Zap, Award, FileText, Home as HomeIcon } from 'lucide-react';
 
 const Home = () => {
   const navigate = useNavigate();
   
+  const openIssuesForm = () => {
+    window.open('https://n8n.cloudboticsconsultancy.com/form/64563462333', '_blank');
+  };
+
+  const openRentForm = () => {
+    window.open('https://n8n.cloudboticsconsultancy.com/form/4324324', '_blank');
+  };
+  
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-sky-50 overflow-hidden">
+      {/* Navbar */}
+      <nav className="relative bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            {/* Logo/Brand */}
+            <div className="flex items-center">
+              <HomeIcon className="w-8 h-8 text-sky-600 mr-2" />
+              <span className="text-xl font-bold text-gray-900">PropertyHub</span>
+            </div>
+            
+            {/* Form Buttons */}
+            <div className="flex items-center space-x-4">
+              <button
+                onClick={openRentForm}
+                className="flex items-center px-4 py-2 bg-gradient-to-r from-sky-500 to-blue-600 text-white font-semibold rounded-lg hover:from-sky-600 hover:to-blue-700 transition-all duration-200 shadow-md hover:shadow-lg transform hover:scale-105"
+              >
+                <Users className="w-4 h-4 mr-2" />
+                Rent Form
+              </button>
+              
+              <button
+                onClick={openIssuesForm}
+                className="flex items-center px-4 py-2 bg-gradient-to-r from-orange-500 to-red-600 text-white font-semibold rounded-lg hover:from-orange-600 hover:to-red-700 transition-all duration-200 shadow-md hover:shadow-lg transform hover:scale-105"
+              >
+                <Wrench className="w-4 h-4 mr-2" />
+                Issues Form
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+
       {/* Animated Background Elements */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-sky-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
