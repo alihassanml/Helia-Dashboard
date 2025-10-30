@@ -21,8 +21,7 @@ const Home = () => {
           <div className="flex justify-between items-center h-16">
             {/* Logo/Brand */}
             <div className="flex items-center">
-              <HomeIcon className="w-8 h-8 text-sky-600 mr-2" />
-              <span className="text-xl font-bold text-gray-900">PropertyHub</span>
+              <img src="logo.png" alt="" style={{width:"150px"}} />
             </div>
             
             {/* Form Buttons */}
